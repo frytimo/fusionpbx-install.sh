@@ -110,7 +110,7 @@ cd /usr/src
 if [ ."$switch_branch" = ."master" ]; then
 	#master branch
 	echo "Using version master"
-	rm -r /usr/src/freeswitch
+	rm -r /usr/src/freeswitch-$switch_version
 	git clone https://github.com/signalwire/freeswitch.git freeswitch-$switch_version
 	cd /usr/src/freeswitch-$switch_version
 
@@ -125,6 +125,7 @@ fi
 # Check for stable release
 if [ ."$switch_branch" != ."master" ] && [ ."$switch_branch" = ."stable" ]; then
 	echo "Using version $switch_version"
+	rm -r /usr/src/freeswitch-$switch_version
 
 	# Get the source code using git
 	if [ ."$switch_version" = ."1.11" ]; then
