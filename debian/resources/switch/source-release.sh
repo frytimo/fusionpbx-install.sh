@@ -125,7 +125,7 @@ fi
 # Check for stable release
 if [ ."$switch_branch" != ."master" ] && [ ."$switch_branch" = ."stable" ]; then
 	echo "Using version $switch_version"
-	rm -r /usr/src/freeswitch-$switch_version
+	rm -rf /usr/src/freeswitch-$switch_version
 
 	# Get the source code using git
 	if [ ."$switch_version" = ."1.11" ]; then
